@@ -1,0 +1,22 @@
+{
+  "name": "backend-nodejs-express-mongodb",
+  "version": "1.0.0",
+  "description": "Advanced Programming Project NRC15397",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anyel-ec/Backend-NodeJS-RestAPI-Advanced-Programming.git"
+  },
+  "author": "Angel P, Cesar Z, Andres B, Sebastian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anyel-ec/Backend-NodeJS-RestAPI-Advanced-Programming/issues"
+  },
+  "homepage": "https://github.com/Anyel-ec/Backend-NodeJS-RestAPI-Advanced-Programming#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
