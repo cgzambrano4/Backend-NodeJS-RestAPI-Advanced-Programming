@@ -1,14 +1,14 @@
-class Register {
-    constructor(identification, phone, email, name, birthdate, province, address, gender, commandType, gradeNote){
+class Register { 
+    constructor(identification, phone, email, name, birthdate, id_province, address, id_gender, id_commandType, gradeNote){
         this.identification = identification;
         this.phone = phone;
         this.email = email;
         this.name = name;
         this.birthdate = birthdate;
-        this.province = province;
+        this.id_province = id_province;
         this.address = address;
-        this.gender = gender;
-        this.commandType = commandType;
+        this.id_gender = id_gender;
+        this.commaid_commandTypendType = id_commandType;
         this.gradeNote = gradeNote;
     }
 }
