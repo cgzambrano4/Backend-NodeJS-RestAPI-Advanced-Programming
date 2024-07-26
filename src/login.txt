@@ -1,0 +1,5 @@
+if admin = all(777);
+
+if cliente = subir(100);
+
+if operador = ver(verificar);
