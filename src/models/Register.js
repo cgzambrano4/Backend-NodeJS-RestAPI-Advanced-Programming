@@ -8,7 +8,7 @@ class Register {
         this.id_province = id_province;
         this.address = address;
         this.id_gender = id_gender;
-        this.commaid_commandTypendType = id_commandType;
+        this.id_commandType = id_commandType;
         this.gradeNote = gradeNote;
     }
 }
