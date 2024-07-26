@@ -1,10 +1,10 @@
 class Users {
-    constructor(name, id_rol, fullName, password, state) {
-        this.name = name;
-        this.id_rol = id_rol;
-        this.fullName = fullName;
-        this.password = password;
-        this.state = state;
+    constructor(username, id_rol, fullName, password, state) {
+        this.username = username; // anyelec
+        this.id_rol = id_rol; // 2: Operador
+        this.fullName = fullName; // 
+        this.password = password; // encrypted 
+        this.state = state; // 0: inactive, 1: active
     }
 }
 
