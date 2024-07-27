@@ -1,12 +1,12 @@
 const express = require('express');
 const EnvLoader = require('./src/config/environment');
 const { connectDB } = require('./src/config/db');
-const userRoutes = require('./src/routes/userRoutes');
-const registerRoutes = require('./src/routes/registerRoutes'); // Importa las rutas de register
-const verifyDataRoutes = require('./src/routes/verifyDataRoutes'); // Importa las rutas de verifyData
+const registerRoutes = require('./src/routes/registerRoutes'); 
+const verifyDataRoutes = require('./src/routes/verifyDataRoutes'); 
+const loadDataRoutes = require('./src/routes/loadDataRoutes'); 
 
 
-const envLoader = new EnvLoader(); // Cargar variables de entorno desde el archivo .env
+const envLoader = new EnvLoader(); 
 
 const app = express();
 app.use(express.json());
@@ -16,9 +16,9 @@ const PORT = envLoader.get('PORT') || 3000;
 // Conectar a la base de datos
 connectDB().then(() => {
   // Definir las rutas
-  app.use('/api/users', userRoutes);
-  app.use('/api/registers', registerRoutes); // Define las rutas para register
-  app.use('/api/verifyData', verifyDataRoutes); // Define las rutas para verifyData
+  app.use('/api/registers', registerRoutes);
+  app.use('/api/verifyData', verifyDataRoutes); 
+  app.use('/api/load', loadDataRoutes);
 
   
   app.listen(PORT, () => {
