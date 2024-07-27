@@ -78,7 +78,7 @@ exports.updateRegisterByIdentification = async (req, res) => {
         }
 
         // Actualizar verifyData
-        const verifyData = new VerifyData(updatedRegister.value._id, new Date(), new Date());
+        const verifyData = new VerifyData(updatedRegister.value._id, new Date(), new Date(), 1); // id 1 es de pendiente
         await db.collection('verifyData').insertOne(verifyData);
 
         res.json({ state: 'exito', code: 200, message: 'Registro actualizado correctamente', data: updatedRegister.value });
@@ -141,7 +141,7 @@ exports.createOrUpdateRegister = async (req, res) => {
             console.log("existingRegister", existingRegister);
             console.log("update", updatedRegister._id);
             // Actualizar verifyData
-            const verifyData = new VerifyData(existingRegister._id, new Date(), new Date());
+            const verifyData = new VerifyData(existingRegister._id, new Date(), new Date(), 1);
             console.log("verifyData", verifyData)
             await db.collection('verifyData').insertOne(verifyData);
 
@@ -151,7 +151,7 @@ exports.createOrUpdateRegister = async (req, res) => {
             const result = await db.collection('registers').insertOne(register);
 
             // Crear verifyData
-            const verifyData = new VerifyData(result.insertedId, new Date(), new Date());
+            const verifyData = new VerifyData(result.insertedId, new Date(), new Date(), 1);
             await db.collection('verifyData').insertOne(verifyData);
 
             res.status(201).json({ state: 'exito', code: 201, message: 'Registro creado correctamente', data: register });
