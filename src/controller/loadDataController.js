@@ -16,6 +16,7 @@ exports.getGender = async (req, res) => {
     try {
         const db = getDB();
         const registers = await db.collection('gender').find().toArray();
+        // cerrar session de la base de datos
         res.json({ state: 'exito', code: 200, message: 'Registros obtenidos correctamente', data: registers });
     } catch (err) {
         console.error(err);
