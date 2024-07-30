@@ -6,6 +6,10 @@ const verifyDataRoutes = require('./src/routes/verifyDataRoutes');
 const loadDataRoutes = require('./src/routes/loadDataRoutes'); 
 const emails = require('./src/routes/sendEmailRoutes'); 
 
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const loginRoutes = require('./src/routes/loginRoutes');
+
 
 const envLoader = new EnvLoader(); 
 
@@ -28,6 +32,8 @@ connectDB().then(() => {
   app.use('/api/verifyData', verifyDataRoutes); 
   app.use('/api/load', loadDataRoutes); 
   app.use('/api/emails',emails); 
+  app.use(bodyParser.json()); //cgzf
+  app.use('/api/login', loginRoutes)//cgzf;
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
